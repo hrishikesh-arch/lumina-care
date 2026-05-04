@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lumina - Vibrant Mental Wellness</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Loader -->
+    <div id="full-loader" class="modal-overlay">
+        <div class="spinner mb-4"></div>
+        <p style="font-size: 1.2rem; font-weight: 600; color: #0f172a;">Loading Lumina...</p>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed-header flex-between z-50">
+        <div class="logo">
+            <img src="assets/lumina_lotus_symbol.png" style="width: 36px; height: 36px; border-radius: 8px; box-shadow: 0 4px 10px rgba(244,63,94,0.3);" alt="Lumina Symbol">
+            <span>Lumina</span>
+        </div>
+        <div id="user-menu" class="hidden flex-center" style="gap: 1rem;">
+            <button onclick="app.signOut()" class="btn btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</button>
+        </div>
+    </header>
+
+    <!-- Main Scroll Container -->
+    <div id="scroll-container" class="scroll-container hidden">
+        
+        <!-- PAGE 1: Landing / Login -->
+        <section id="page-login" class="swipe-page" style="padding: 0; align-items: center; justify-content: center;">
+            <div class="container fade-in" style="max-width: 1200px; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; z-index: 10;">
+                
+                <!-- Left Column: Copy & CTA -->
+                <div style="text-align: left;">
+                    <div class="tag" style="margin-bottom: 1.5rem; display: inline-block;">Meet Lumina AI</div>
+                    <h1 style="font-size: 5rem; line-height: 1.05; text-align: left; margin-bottom: 1.5rem;">Conquer Burnout.<br>Find Your Peace.</h1>
+                    <p style="font-size: 1.3rem; color: #475569; line-height: 1.6; margin-bottom: 3rem; max-width: 500px;">
+                        Advanced AI meets stunning design to track your emotional exhaustion and craft vibrant, personalized wellness plans.
+                    </p>
+                    <button onclick="app.signInWithGoogle()" class="btn btn-primary" style="font-size: 1.25rem; padding: 1.2rem 2.5rem; border-radius: 50px; box-shadow: 0 15px 30px rgba(244, 63, 94, 0.3);">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" style="width: 24px; height: 24px; background: white; border-radius: 50%; padding: 2px;" alt="Google">
+                        Start Your Journey
+                    </button>
+                </div>
+
+                <!-- Right Column: Stunning Visuals & Floating Cards -->
+                <div style="position: relative; height: 600px; display: flex; justify-content: center; align-items: center;">
+                    <!-- Floating Orb Behind -->
+                    <div style="position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(244,63,94,0.4) 0%, transparent 70%); filter: blur(50px); z-index: 1;"></div>
+                    
+                    <!-- Main Floating Icon -->
+                    <img src="assets/lumina_lotus_symbol.png" style="width: 320px; height: 320px; border-radius: 64px; box-shadow: 0 40px 80px rgba(244, 63, 94, 0.25); animation: float 8s ease-in-out infinite; z-index: 5; background: white;" alt="Lumina Symbol">
+                    
+                    <!-- Floating Feature Card 1 -->
+                    <div class="glass-panel" style="position: absolute; top: 15%; left: -15%; padding: 1.5rem; border-radius: 24px; animation: float 6s ease-in-out infinite reverse; z-index: 10;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 48px; height: 48px; background: #fff1f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(244,63,94,0.2);">
+                                <i class="fa-solid fa-brain" style="color: #f43f5e; font-size: 1.4rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; margin: 0; color: #0f172a;">AI Detection</h4>
+                                <p style="font-size: 0.9rem; margin: 0; color: #64748b;">Instant burnout analysis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Feature Card 2 -->
+                    <div class="glass-panel" style="position: absolute; bottom: 20%; right: -10%; padding: 1.5rem; border-radius: 24px; animation: float 7s ease-in-out infinite 2s; z-index: 10;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 48px; height: 48px; background: #fef3c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(245,158,11,0.2);">
+                                <i class="fa-solid fa-list-check" style="color: #f59e0b; font-size: 1.4rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; margin: 0; color: #0f172a;">Custom Plans</h4>
+                                <p style="font-size: 0.9rem; margin: 0; color: #64748b;">Step-by-step healing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PAGE 2: Hero / Swipe Prompt -->
+        <section id="page-hero" class="swipe-page hidden">
+            <div class="text-center fade-in glass-panel" style="padding: 4rem; max-width: 750px;">
+                <h1 style="margin-bottom: 1rem; font-size: 3.5rem;">Breathe deeply.</h1>
+                <p style="font-size: 1.5rem; color: #334155; margin: 0 auto;">Lumina is here to listen, brighten your day, and help you find peace.</p>
+            </div>
+            <div class="swipe-indicator" onclick="app.scrollTo('page-input')">
+                <span>Swipe Up to Begin</span>
+                <i class="fa-solid fa-chevron-down bounce"></i>
+            </div>
+        </section>
+
+        <!-- PAGE 3: Input Form -->
+        <section id="page-input" class="swipe-page hidden">
+            <div class="glass-panel fade-in" style="width: 90%; max-width: 1000px; padding: 4.5rem;">
+                <h2 style="font-size: 3.5rem; margin-bottom: 1rem;">How are you feeling?</h2>
+                <p style="font-size: 1.4rem; color: #475569; margin-bottom: 2.5rem;">Share your thoughts, stresses, or feelings of exhaustion below.</p>
+                
+                <div style="position: relative; margin-top: 2rem;">
+                    <textarea id="user-input" rows="8" style="font-size: 1.3rem; padding: 1.5rem; border-radius: 24px;" placeholder="E.g., I've been feeling extremely overwhelmed with work lately and my sleep is suffering..."></textarea>
+                    <div id="char-count" style="position: absolute; bottom: 1.2rem; right: 2rem; font-size: 1rem; color: #94a3b8; font-weight: 500;">0 / 2000</div>
+                </div>
+                
+                <div id="input-error" class="hidden error-text" style="margin-top: 1.5rem; font-size: 1.1rem;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span id="input-error-text">Please enter at least 10 characters.</span>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; margin-top: 3rem;">
+                    <button id="analyze-btn" onclick="app.analyzeInput()" class="btn btn-primary" style="width: 100%; font-size: 1.4rem; padding: 1.5rem; border-radius: 24px;">
+                        Analyze Feelings <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: Analyzing (Loading Screen) -->
+        <section id="page-analyzing" class="swipe-page hidden">
+            <div class="text-center fade-in glass-panel" style="padding: 4rem;">
+                <div class="breathe-container" style="width: 180px; height: 180px; margin: 0 auto 3rem auto;">
+                    <div class="breathe-circle breathe-in" style="animation: spin 3s linear infinite;"></div>
+                    <div class="breathe-icon"><img src="assets/lumina_lotus_symbol.png" style="width: 120px; height: 120px; border-radius: 30px;" alt="Lumina"></div>
+                </div>
+                <h2 style="font-size: 2.5rem; color: #0f172a;">Analyzing...</h2>
+                <p style="font-size: 1.3rem;">Crafting your personalized vibrant wellness plan.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 5: Results -->
+        <section id="page-results" class="swipe-page hidden" style="align-items: flex-start; padding-top: 100px;">
+            <div class="container fade-in" style="padding-bottom: 6rem;">
+                <div class="glass-panel" style="margin-bottom: 3rem; position: relative; overflow: hidden; border-left: 6px solid #f43f5e;">
+                    <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: #f59e0b; opacity: 0.15; border-radius: 50%; filter: blur(50px);"></div>
+                    <span class="tag" id="result-sentiment">Analysis</span>
+                    <p id="result-summary" style="font-size: 1.3rem; color: #1e293b; margin-bottom: 0; line-height: 1.8; font-weight: 500;"></p>
+                </div>
+
+                <h3 style="display: flex; align-items: center; gap: 1rem; font-size: 2rem; margin-bottom: 2rem;"><i class="fa-solid fa-list-check" style="color: #f43f5e;"></i> Your Action Plan</h3>
+                <div id="plan-container">
+                    <!-- Plan items injected here -->
+                </div>
+            </div>
+            <div class="swipe-indicator" id="results-swipe-indicator" style="display: none;" onclick="app.scrollTo('page-breathing')">
+                <span>Swipe Up for Breathing Exercise</span>
+                <i class="fa-solid fa-chevron-down bounce"></i>
+            </div>
+        </section>
+
+        <!-- PAGE 6: Breathing Exercise -->
+        <section id="page-breathing" class="swipe-page hidden">
+            <div class="text-center fade-in">
+                <h2 style="font-size: 3.5rem; color: #0f172a;">Mindful Breathing</h2>
+                <p id="breathe-instruction" style="font-size: 1.6rem; margin-bottom: 4rem; color: #475569; font-weight: 500;">Get ready...</p>
+                
+                <div class="breathe-container" style="margin: 0 auto;">
+                    <div id="breathe-circle" class="breathe-circle"></div>
+                    <div class="breathe-icon"><img src="assets/lumina_lotus_symbol.png" alt="Lumina Symbol"></div>
+                </div>
+
+                <button id="start-breathe-btn" onclick="app.startBreathingExercise()" class="btn btn-primary" style="margin-top: 6rem; font-size: 1.3rem; padding: 1.2rem 3rem;">
+                    Start Exercise <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Firebase SDK Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
