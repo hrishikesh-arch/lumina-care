@@ -2,6 +2,9 @@
 
 A premium, interactive web platform for AI-powered stress and burnout detection. 
 
+## Live Demo
+🚀 **[View Live Application on Netlify](https://papaya-sunshine-5cafc3.netlify.app)**
+
 ## Features
 - **Premium Light Mode UI**: Asymmetrical grids, 3D assets, and dynamic typography.
 - **Interactive Health Dashboard**: Visualizes vital signs (BPM, HRV, Stress Levels) and burnout metrics.
